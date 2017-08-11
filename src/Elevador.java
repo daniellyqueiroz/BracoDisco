@@ -38,22 +38,98 @@ public class Elevador {
 		ArrayList<Integer> cima = new ArrayList<Integer>();
 		ArrayList<Integer> baixo = new ArrayList<Integer>();
 		
-		cima.addAll( getMaiores(requisicoes));
-		baixo.addAll( getMenores(requisicoes));
+		cima.addAll(getMaiores(requisicoes));
+		baixo.addAll(getMenores(requisicoes));
 		
 		Collections.sort(cima);
 		Collections.sort(baixo);
 		Collections.reverse(baixo);
 		
 		requisicoes.clear();
+		
 		requisicoes.addAll(cima);
 		requisicoes.addAll(baixo);
 		
 		
 		disco.imprimePosicao(requisicoes, 1000L);
+		
+		for (int i = 0; i < requisicoes.size(); i++) {
+			if(i == requisicoes.size()-1 ){
+				disco.setPosicao(requisicoes.get(i));
+			}
+			
+		}
+		
+		System.out.println(disco.getPosicao());
+
+	
+	}
+	
+	public void cScan(ArrayList<Integer> requisicoes) throws InterruptedException{
+
+		ArrayList<Integer> cima = new ArrayList<Integer>();
+		ArrayList<Integer> baixo = new ArrayList<Integer>();
+		
+		cima.addAll(getMaiores(requisicoes));
+		baixo.addAll(getMenores(requisicoes));
+		
+		Collections.sort(cima);
+		Collections.sort(baixo);
+		Collections.reverse(baixo);
+		
+		requisicoes.clear();
+		
+		requisicoes.addAll(cima);
+		requisicoes.addAll(baixo);
+		
+		
+		disco.imprimePosicao(requisicoes, 1000L);
+		
+		for (int i = 0; i < requisicoes.size(); i++) {
+			if(i == requisicoes.size()-1 ){
+				disco.setPosicao(requisicoes.get(i));
+			}
+			
+		}
+		
+		System.out.println(disco.getPosicao());
+
+	
+	}
+	
+public void look(ArrayList<Integer> requisicoes) throws InterruptedException{
+		
+	ArrayList<Integer> cima = new ArrayList<Integer>();
+	ArrayList<Integer> baixo = new ArrayList<Integer>();
+	
+	baixo.addAll(getMaiores(requisicoes));
+	cima.addAll(getMenores(requisicoes));
+			
+	Collections.sort(cima);
+	Collections.sort(baixo);
+	Collections.reverse(baixo);
+			
+	requisicoes.clear();
+			
+	requisicoes.addAll(cima);
+	requisicoes.addAll(baixo);
+	
+	disco.imprimePosicao(requisicoes, 1000L);
+	
+	for (int i = 0; i < requisicoes.size(); i++) {
+		if(i == requisicoes.size()-1 ){
+			disco.setPosicao(requisicoes.get(i));	
+			
+		}	
+	}
+	
+	System.out.println(disco.getPosicao());
+
+
+}
 
 	
 	}
 	
 	
-}
+
