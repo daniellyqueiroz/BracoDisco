@@ -16,11 +16,7 @@ public static void main(String[] args) throws InterruptedException {
 	
 	Elevador elevador = new Elevador(disco);
 	
-	String imprimeRequisicoes ="";
-	for (int i = 0; i < requisicoes.size(); i++) {
-		imprimeRequisicoes+= requisicoes.get(i) +",";
-	}
-	System.out.println("Lista de Requisicoes:" + imprimeRequisicoes);
+	
 	
 	elevador.scan(requisicoes);
 	

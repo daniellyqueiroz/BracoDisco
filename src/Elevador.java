@@ -49,6 +49,7 @@ public class Elevador {
 		requisicoes.addAll(cima);
 		requisicoes.addAll(baixo);
 		
+		
 		disco.imprimePosicao(requisicoes, 1000L);
 
 	

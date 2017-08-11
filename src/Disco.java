@@ -46,6 +46,13 @@ public class Disco {
 	}
 	
 	public void imprimePosicao(ArrayList<Integer> requisicoes, long tempoBusca) throws InterruptedException {
+		
+		String imprimeRequisicoes ="";
+		for (int i = 0; i < requisicoes.size(); i++) {
+			imprimeRequisicoes+= requisicoes.get(i) +",";
+		}
+		System.out.println("Lista de Requisicoes:" + imprimeRequisicoes);
+		
 		for (Integer posicao : requisicoes) {
 			System.out.println("posicao do braco: "+posicao);
 			Thread.sleep(tempoBusca);
