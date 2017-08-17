@@ -45,7 +45,7 @@ public class Disco {
 		this.tempoBusca = tempoBusca;
 	}
 	
-	public void imprimePosicao(ArrayList<Integer> requisicoes, long tempoBusca) throws InterruptedException {
+public void imprimePosicao(ArrayList<Integer> requisicoes, long tempoBusca, int tamanho) throws InterruptedException {
 		
 		String imprimeRequisicoes ="";
 		for (int i = 0; i < requisicoes.size(); i++) {
@@ -57,6 +57,113 @@ public class Disco {
 			System.out.println("posicao do braco: "+posicao);
 			Thread.sleep(tempoBusca);
 		}
+		
+	}
+	public void imprimeScan(ArrayList<Integer> requisicoes, long tempoBusca, int tamanho) throws InterruptedException {
+		
+		String imprimeRequisicoes ="";
+		
+		for (int i = 0; i < requisicoes.size(); i++) {
+			imprimeRequisicoes+= requisicoes.get(i) +",";
+		}
+		System.out.println("Lista de Requisicoes:" + imprimeRequisicoes);
+		
+		for(int i = 0; i < tamanho; i++){
+			
+			if(!requisicoes.contains(i)){
+				System.out.println("Posicao do braco " +i+" : Sem Requicoes");
+				
+			}else{
+				System.out.println("Posicao do braco "+ i+ " : Requisicao Atendida") ;
+				
+			}
+			Thread.sleep(tempoBusca);
+			
+		}
+		
+		System.err.println("voltando\n");
+		
+		for(int i = tamanho-1; i>= 0; i --){
+		
+				System.out.println("Posicao do braco "+ i+ " : Sem Requisicao") ;
+				
+		
+			
+			Thread.sleep(tempoBusca);
+			
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+public void imprimeCSCAN(ArrayList<Integer> requisicoes, long tempoBusca, int tamanho) throws InterruptedException {
+		
+		String imprimeRequisicoes ="";
+		
+		for (int i = 0; i < requisicoes.size(); i++) {
+			imprimeRequisicoes+= requisicoes.get(i) +",";
+		}
+		System.out.println("Lista de Requisicoes:" + imprimeRequisicoes);
+		
+		
+		for(int i = 0; i < tamanho; i++){
+			
+			if(!requisicoes.contains(i)){
+				System.out.println("Posicao do braco " +i+" : Sem Requicoes");
+				
+			}else{
+				System.out.println("Posicao do braco "+ i+ " : Requisicao Atendida") ;
+				
+			}
+			Thread.sleep(tempoBusca);
+			
+		}
+		System.err.println("voltando\n");
+		for(int i = tamanho-1; i>= 0; i --){
+			System.out.println("Posicao do braco " +i+" : NAO ATENDE");
+			Thread.sleep(tempoBusca);
+			
+		}
+			
+		
+}
+	
+public void imprimeLook(ArrayList<Integer> requisicoes, long tempoBusca, int tamanho) throws InterruptedException {
+		
+		String imprimeRequisicoes ="";
+		
+		for (int i = 0; i < requisicoes.size(); i++) {
+			imprimeRequisicoes+= requisicoes.get(i) +",";
+		}
+		System.out.println("Lista de Requisicoes:" + imprimeRequisicoes);
+		
+		for(int i = 0; i < tamanho; i++){
+			
+			if(!requisicoes.contains(i)){
+				System.out.println("Posicao do braco " +i+ " : Sem Requicoes");
+				
+			}else{
+				System.out.println("Posicao do braco "+ i+ " : Requisicao Atendida") ;
+				
+			}
+			Thread.sleep(tempoBusca);
+			
+		}
+		System.err.println("voltando\n");
+		for(int i = tamanho-1; i>= 0; i --){
+	
+				System.out.println("Posicao do braco " +i+ " : Sem Requicoes");
+				
+			
+			Thread.sleep(tempoBusca);
+			
+		}
+	
+			
 		
 	}
 }
